@@ -28,7 +28,14 @@ composer require v10086/db:dev-master
                         'user'=>'dbuser',
                         'password'=>'dbpass'
                 ],
+                'other'=>[
+                        'dns'=>'mysql:127.0.0.1;dbname=other_app;charset=utf8mb4;collation=utf8mb4_unicode_ci',
+                        'user'=>'other_dbuser',
+                        'password'=>'other_dbpass'
+                ],
         ];
+        //默认default 可设置为其他配置
+        \v10086\DB::connection('default');
 
         //查询单个用户
         $user = \v10086\DB::exec('select * from user where id=?',[10086])->fetch();

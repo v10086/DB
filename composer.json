@@ -1,7 +1,7 @@
 {
   "name": "v10086/db",
   "type": "library",
-  "description": "简约可靠的数据库操作句柄",
+  "description": "简约、高效、可靠的数据库操作句柄",
   "keywords": [
     "php",
     "pdo",

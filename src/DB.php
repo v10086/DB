@@ -5,17 +5,17 @@ namespace v10086;
 class DB{
     static $instance;//PDO实例组
     static $handler; //当前PDO实例句柄
-    static $cofing;//数据库配置
+    static $config;//数据库配置
     
     //实例化pdo  采用单利例模式
     public static function connection($conn='default') {
         $conn && self::$handler=$conn;  !self::$handler && self::$handler ='default';
         if (!isset(self::$instance[self::$handler]) || !self::$instance[self::$handler]){
-            if(!self::$cofing){
+            if(!self::$config){
                 throw new \Exception('请先设置数据库配置信息');
             }
-            $cofing=self::$cofing[self::$handler];
-            self::$instance[self::$handler] =  new \PDO($cofing['dns'], $cofing['user'], $cofing['password'],[\PDO::ATTR_PERSISTENT=> true]);
+            $config=self::$config[self::$handler];
+            self::$instance[self::$handler] =  new \PDO($config['dns'], $config['user'], $config['password'],[\PDO::ATTR_PERSISTENT=> true]);
             self::$instance[self::$handler]->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
             self::$instance[self::$handler]->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             self::$instance[self::$handler]->setAttribute(\PDO::ATTR_EMULATE_PREPARES , FALSE);//数据库使用真正的预编译

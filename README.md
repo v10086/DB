@@ -24,12 +24,12 @@ composer require v10086/db:dev-master
         //设置配置信息
         \v10086\DB::$cofing=[
                 'default'=>[
-                        'dns'=>'mysql:127.0.0.1;dbname=app;charset=utf8mb4;collation=utf8mb4_unicode_ci',
+                        'dsn'=>'mysql:127.0.0.1;dbname=app;charset=utf8mb4;collation=utf8mb4_unicode_ci',
                         'user'=>'dbuser',
                         'password'=>'dbpass'
                 ],
                 'other'=>[
-                        'dns'=>'mysql:127.0.0.1;dbname=other_app;charset=utf8mb4;collation=utf8mb4_unicode_ci',
+                        'dsn'=>'mysql:127.0.0.1;dbname=other_app;charset=utf8mb4;collation=utf8mb4_unicode_ci',
                         'user'=>'other_dbuser',
                         'password'=>'other_dbpass'
                 ],

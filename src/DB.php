@@ -15,7 +15,7 @@ class DB{
                 throw new \Exception('请先设置数据库配置信息');
             }
             $config=self::$config[self::$handler];
-            self::$instance[self::$handler] =  new \PDO($config['dns'], $config['user'], $config['password'],[\PDO::ATTR_PERSISTENT=> true]);
+            self::$instance[self::$handler] =  new \PDO($config['dsn'], $config['user'], $config['password'],[\PDO::ATTR_PERSISTENT=> true]);
             self::$instance[self::$handler]->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
             self::$instance[self::$handler]->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             self::$instance[self::$handler]->setAttribute(\PDO::ATTR_EMULATE_PREPARES , FALSE);//数据库使用真正的预编译

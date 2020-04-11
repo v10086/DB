@@ -22,7 +22,7 @@ composer require v10086/db:dev-master
 
 <?php
         //设置配置信息
-        \v10086\DB::$cofing=[
+        \v10086\DB::$config=[
                 'default'=>[
                         'dsn'=>'mysql:127.0.0.1;dbname=app;charset=utf8mb4;collation=utf8mb4_unicode_ci',
                         'user'=>'dbuser',
